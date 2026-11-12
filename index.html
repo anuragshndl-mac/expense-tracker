@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Expense Tracker</h1>
+
+    <!-- Total amount -->
+    <section class="summary">
+      <p>Total spent</p>
+      <h2 id="total">₹0</h2>
+    </section>
+
+    <!-- Form to add a new expense -->
+    <form id="expense-form">
+      <input type="text" id="title" placeholder="What did you spend on?" required />
+      <input type="number" id="amount" placeholder="Amount (₹)" min="1" required />
+      <select id="category" required>
+        <option value="">Select category</option>
+        <option>Food</option>
+        <option>Travel</option>
+        <option>Study</option>
+        <option>Entertainment</option>
+        <option>Other</option>
+      </select>
+      <input type="date" id="date" required />
+      <button type="submit">Add Expense</button>
+    </form>
+
+    <!-- Chart: spending per category -->
+    <section class="chart-section">
+      <h3>Spending by category</h3>
+      <canvas id="category-chart"></canvas>
+    </section>
+
+    <!-- Filter -->
+    <section class="filters">
+      <label for="filter-category">Show:</label>
+      <select id="filter-category">
+        <option value="all">All categories</option>
+        <option>Food</option>
+        <option>Travel</option>
+        <option>Study</option>
+        <option>Entertainment</option>
+        <option>Other</option>
+      </select>
+    </section>
+
+    <!-- List of expenses (filled by JavaScript) -->
+    <ul id="expense-list"></ul>
+    <p id="empty-message">No expenses yet. Add your first one above.</p>
+  </main>
+
+  <!-- Chart.js library (loaded from the internet) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Our own code -->
+  <script src="script.js"></script>
+</body>
+</html>
